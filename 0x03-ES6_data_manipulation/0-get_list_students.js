@@ -15,7 +15,7 @@ export default function getListStudents() {
     "firstName": "Serena",
     "location": "San Francisco"
   };
-  
+
   arr.push(obj1, obj2, obj3);
   return arr;
 }

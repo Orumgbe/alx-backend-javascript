@@ -1,18 +1,15 @@
-// Import readline module
-const readline = require('readline');
+console.log('Welcome to Holberton School, what is your name?');
 
-const prompt = 'Welcome to Holberton School, what is your name?\n';
-
-// Create readline interface
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+// Listen for input
+process.stdin.on('readable', () => {
+  // Read input and write to stdout
+  const text = process.stdin.read();
+  if (text) {
+    process.stdout.write(`Your name is: ${text}`);
+  }
 });
 
-// Use interface 'question' to get input from user
-rl.question(prompt, (name) => {
-  console.log(`Your name is: ${name}`);
-  // Close interface
+// Listen for program end
+process.stdin.on('end', () => {
   console.log('This important software is now closing');
-  rl.close();
 });

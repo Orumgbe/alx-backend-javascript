@@ -9,10 +9,12 @@ function countStudents(fileName) {
   } catch (err) {
     throw new Error('Cannot load the database');
   }
+  // Create an array of the data
   const students = data.split('\n').filter((item) => item);
+  // Remove first element in array (Table head info)
   students.shift();
   console.log(`Number of students: ${students.length}`);
-  console.log(students);
+  // Restrucuture to dictionary with only required info
   const dict = {};
   students.forEach((line) => {
     const record = line.split(',');
@@ -24,8 +26,9 @@ function countStudents(fileName) {
   });
   for (const field in dict) {
     if (field) {
-      process.stdout.write(`Number of students in ${field}: ${dict[field].length}. `);
-      process.stdout.write(`List: ${dict[field].join(', ')}\n`);
+      const t1 = `Number of students in ${field}: ${dict[field].length}. `;
+      const t2 = `List: ${dict[field].join(', ')}`;
+      console.log(t1 + t2);
     }
   }
 }

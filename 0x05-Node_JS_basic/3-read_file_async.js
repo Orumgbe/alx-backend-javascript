@@ -22,8 +22,9 @@ function countStudents(fileName) {
         });
         for (const key in dict) {
           if (key) {
-            process.stdout.write(`Number of students in ${key}: ${dict[key].length}. `);
-            process.stdout.write(`List: ${dict[key].join(', ')}\n`);
+            const t1 = `Number of students in ${field}: ${dict[field].length}. `;
+            const t2 = `List: ${dict[field].join(', ')}`;
+            console.log(t1 + t2);
           }
         }
         resolve('Success!');

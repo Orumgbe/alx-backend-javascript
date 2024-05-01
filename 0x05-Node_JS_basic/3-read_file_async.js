@@ -22,8 +22,8 @@ function countStudents(fileName) {
         });
         for (const key in dict) {
           if (key) {
-            const t1 = `Number of students in ${field}: ${dict[field].length}. `;
-            const t2 = `List: ${dict[field].join(', ')}`;
+            const t1 = `Number of students in ${key}: ${dict[key].length}. `;
+            const t2 = `List: ${dict[key].join(', ')}`;
             console.log(t1 + t2);
           }
         }

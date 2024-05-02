@@ -25,7 +25,7 @@ app.get('/students', async (req, res) => {
     nugget += students.join('\n');
     res.send(nugget);
   } catch (error) {
-    res.send( nugget + error.message);
+    res.send(nugget + error.message);
   }
 });
 

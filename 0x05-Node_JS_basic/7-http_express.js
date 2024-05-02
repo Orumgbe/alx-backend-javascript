@@ -19,13 +19,13 @@ app.get('/', (req, res) => {
 // Students url
 app.get('/students', async (req, res) => {
   res.contentType('text/plain');
+  let nugget = 'This is the list of our students\n';
   try {
     const students = await countStudents(DATABASE);
-    let nugget = 'This is the list of our students\n';
     nugget += students.join('\n');
     res.send(nugget);
   } catch (error) {
-    res.send(error.message);
+    res.send( nugget + error.message);
   }
 });
 

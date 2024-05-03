@@ -11,7 +11,7 @@ class StudentsController {
         let output = 'This is the list of our students\n';
         for (const field in students) {
           if (field) {
-            students[field].sort((a, b) => (a.toLowerCase(), b.toLowerCase()));
+            students[field].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
             output += `Number of students in ${field}: ${students[field].length}\n`;
             output += `List: ${students[field].join(', ')}`;
           }
@@ -38,7 +38,7 @@ class StudentsController {
       (students) => {
         // Process data object
         let output = '';
-        students[major].sort((a, b) => (a.toLowerCase(), b.toLowerCase()));
+        students[major].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
         output += `List: ${students[major].join(', ')}`;
         response.status(200).send(output);
       },

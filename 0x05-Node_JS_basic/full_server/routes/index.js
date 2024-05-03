@@ -12,12 +12,12 @@ router.get('/', (req, res) => {
 
 router.get('/students', (req, res) => {
   // Get all students
-  StudentsController.getAllStudents(req, res);
+  StudentsController.getAllStudents(req, res, process.argv[2]);
 });
 
 router.get('/students/:major', (req, res) => {
   // Get all students in a given major
-  StudentsController.getAllStudentsByMajor(req, res);
+  StudentsController.getAllStudentsByMajor(req, res, process.argv[2]);
 });
 
 module.exports = router;

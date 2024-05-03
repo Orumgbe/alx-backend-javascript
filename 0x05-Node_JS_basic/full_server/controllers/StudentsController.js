@@ -1,19 +1,19 @@
 import readDatabase from '../utils';
 
-const DATABASE = 'database.csv';
+const DATABASE = process.argv[2];
 
 class StudentsController {
   static getAllStudents(request, response) {
-    readDatabase('database.csv').then(
+    readDatabase(DATABASE).then(
       // Promise successfully resolves list of student
       (students) => {
         // Process data object
         let output = 'This is the list of our students\n';
         for (const field in students) {
           if (field) {
-            students[field].sort((a, b) => a.toLowerCase().LocaleCompare(b.toLowerCase()));
+            students[field].sort((a, b) => (a.toLowerCase(), b.toLowerCase()));
             output += `Number of students in ${field}: ${students[field].length}\n`;
-            output += `List: ${students[field].join(', ')}\n`;
+            output += `List: ${students[field].join(', ')}`;
           }
         }
         response.status(200).send(output);
@@ -38,8 +38,8 @@ class StudentsController {
       (students) => {
         // Process data object
         let output = '';
-        students[major].sort((a, b) => a.toLowerCase().LocaleCompare(b.toLowerCase()));
-        output += `List: ${students[major].join(', ')}\n`;
+        students[major].sort((a, b) => (a.toLowerCase(), b.toLowerCase()));
+        output += `List: ${students[major].join(', ')}`;
         response.status(200).send(output);
       },
     ).catch(() => {

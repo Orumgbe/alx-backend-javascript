@@ -1,1 +1,5 @@
 0x00-ES6_basic/node_modules/.bin/acorn
+0x01-ES6_promise/.gitignore
+0x01-ES6_promise/*main.js
+0x02-ES6_classes/node_modules/
+0x06-unittests_in_js/node_modules/

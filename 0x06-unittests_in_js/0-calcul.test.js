@@ -29,4 +29,8 @@ describe('calculateNumber', () => {
   it('testing rounded up value of a and b', () => {
     assert.strictEqual(calculateNumber(2.6, 2.5), 6);
   });
+
+  it('rounding down a and b floating point fractional numbers with trailing 9', () => {
+    assert.strictEqual(calculateNumber(2.499999, 3.499999), 5);
+  });
 });

@@ -3,3 +3,9 @@
 0x01-ES6_promise/*main.js
 0x02-ES6_classes/node_modules/
 0x06-unittests_in_js/node_modules/
+0x04-TypeScript/.eslintrc.js
+0x04-TypeScript/node_modules/
+0x04-TypeScript/webpack.config.js
+0x04-TypeScript/tsconfig.json
+0x04-TypeScript/package-lock.json
+

@@ -6,3 +6,7 @@ interface Teacher {
   location: string
   [key: string]: unknown
 }
+
+interface Directors extends Teacher {
+  numberOfReports: number
+}
